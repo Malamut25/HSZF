@@ -1,0 +1,79 @@
+﻿Könnyű szint (7 feladat)
+
+Alap Where, MaxBy/MinBy, Take, All, Select projekció, Single vs First.
+
+1. Melyik filmnek van a legjobb értékelése?
+Figyelem: holtverseny esetén mind kellene.
+
+2. Melyik filmek rendezője egy adott rendező?
+Paraméter: string directorName.
+
+3. Filmek listája cím és megjelenési év formában.
+Adj vissza egy gyűjteményt ahol minden elem tartalmazza a Title-t és a kiadás évét. (Tipp: anonim típus vagy tuple.)
+
+4. Igaz-e hogy minden film értékelése jobb egy adott értéknél?
+Paraméter: double minRating.
+
+5. Melyik a legjobb film egy adott időintervallumban?
+Paraméterek: DateTime from, DateTime to.
+
+6. Melyik a legrosszabb három film?
+
+7. Van-e pontosan egy film egy adott pontszámmal?
+Paraméter: double rating. Használd a SingleOrDefault-ot és adj vissza bool-t. Ha kettő is van, direkt hagyj kivételt.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Közepes szint (9 feladat)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Navigation property-k, Count, Any, Distinct, Average, Include, egyszerű GroupBy, OrderBy + ThenBy.
+
+8. Melyek azok a filmek, amiknek a pontszáma jobb az átlagnál?
+
+9. Van-e olyan film, amelyiknél nincsenek szerepek megadva?
+
+10. Melyik színész játszott a legtöbb különböző szerepben?
+Figyelem: különböző szerep, nem különböző film.
+
+11. Hányan játszottak a legjobb pontszámú filmben?
+
+12. Adott színésznek melyik volt a legjobb és melyik a legrosszabb filmje?
+Paraméter: string actorName. Adj vissza egy anonim típust vagy tuple-t (Best, Worst).
+
+13. Van-e legalább két azonos nevű színész?
+
+14. Melyik színészek szerepeltek adott értéknél jobb pontszámú filmekben?
+Paraméter: double minRating. Figyelem: ugyanaz a színész több filmben szerepelhet, tehát Distinct kell.
+
+15. Melyik rendező rendezte a legtöbb filmet?
+
+16. Filmek rendezőnként csoportosítva, azon belül pontszám szerint csökkenőleg.
+Adj vissza egy gyűjteményt rendezetten.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nehéz szint (szorgalmi, 4 feladat)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SelectMany, komplex GroupBy aggregátumokkal, self-join, több-lépcsős navigáció.
+
+17. Melyik rendező dolgozott a legtöbb különböző színésszel?
+
+18. Statisztika rendezőnként.
+Az eredmény tartalmazza:
+	rendező neve
+	rendezett filmek száma
+	filmjeinek átlagos értékelése
+
+19. Évtizedes átlagok.
+Csoportosítsd a filmeket évtized szerint. Az eredmény tartalmazza:
+	évtized (pl. 2020)
+	filmek száma
+	átlagos értékelés
+
+Tipp: GroupBy(m => (m.ReleaseDate.Value.Year / 10) * 10).
+
+20. Színészpárok akik legalább 2 különböző filmben együtt szerepeltek.
+Az eredmény tartalmazza:
+	első színész neve
+	második színész neve
+	közös filmek száma
